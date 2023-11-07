@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juma EdTech Registration</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('0z4les0d-720.jpg') no-repeat top center;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .registration-container {
+            background: url('0z4les0d-720.jpg') no-repeat top center;
+            background-size: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            animation: fadeInUp 0.6s;
+            padding: 20px;
+            margin-top: 62.5px;
+            transition: box-shadow 0.3s;
+        }
+
+        .registration-container:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .registration-container h1 {
+            color: #FFA500;
+            font-size: 28px;
+            animation: pulse 2s infinite;
+        }
+
+        .registration-container p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .input-container {
+            padding: 10px 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input {
+            color: #000; /* Change text color to black */
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:hover {
+            border-color: #FFA500;
+        }
+
+        input:focus {
+            border-color: #FF4500;
+            box-shadow: 0 0 6px rgba(255, 69, 0, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 600;
+            animation: pulse 1s infinite;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+            transform: scale(1.05);
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            animation: pulse 1s infinite;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+        }
+
+        /* Added CSS for congratulatory message */
+        #congratulations {
+            display: none;
+            color: #FFA500;
+            font-size: 36px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="welcome-message">
+            <h1>Welcome to <span style="color: #FFA500;">Juma EdTech</span></h1>
+            <p>Your resource for quality education</p>
+        </div>
+        <h2>Register to Access Your Account</h2>
+        <form id="registration-form" onsubmit="return validateForm()">
+            <div class="input-container">
+                <label for="email" style="font-weight: bold; color: #fff;">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="password" style="font-weight: bold; color: #fff;">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                <label for="agree-terms">I agree to the <a href="https://juma883.wordpress.com/terms-of-service/" class="terms-and-privacy">Terms of Service</a> and <a href="https://juma883.wordpress.com/privacy-policy/" class="terms-and-privacy">Privacy Policy</a>.</label>
+            </div>
+            <button type="submit" class="animate__animated animate__pulse" id="register-button">Register</button>
+        </form>
+        
+        <!-- Congratulatory message -->
+        <div id="congratulations">CONGRATULATIONS FOR SIGNING UP WITH JUMAEDTECH</div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+
+            // Show the congratulatory message with a fade-in animation
+            var congratsMessage = document.getElementById("congratulations");
+            congratsMessage.style.display = "block";
+
+            // You should send the registration data to your server for further processing
+            // You will need to implement server-side code to handle user registration and email confirmation.
+
+            // Once registration is successful, you can redirect the user to the login page or automatically log them in.
+
+            return false; // Prevent form submission for this example
+        }
+    </script>
+</body>
+</html>

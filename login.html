@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juma EdTech Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('0z4les0d-720.jpg') no-repeat top center;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: url('0z4les0d-720.jpg') no-repeat top center;
+            background-size: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            animation: fadeInUp 0.6s;
+            padding: 20px;
+            margin-top: 62.5px;
+            transition: box-shadow 0.3s;
+        }
+
+        .login-container:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h1 {
+            color: #FFA500;
+            font-size: 28px;
+            animation: pulse 2s infinite;
+        }
+
+        .login-container p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .welcome-message {
+            /* Removed the padding to make the welcome message more visible */
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .input-container {
+            padding: 10px 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input {
+            color: #000; /* Change text color to black */
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="password"] {
+            color: #000; /* Change text color to black for password input */
+        }
+
+        input:hover {
+            border-color: #FFA500;
+        }
+
+        input:focus {
+            border-color: #FF4500;
+            box-shadow: 0 0 6px rgba(255, 69, 0, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 600;
+            animation: pulse 1s infinite;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+            transform: scale(1.05);
+        }
+
+        .quote-of-the-day {
+            margin: 20px;
+        }
+
+        .quote-of-the-day h3 {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .quote-of-the-day p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .additional-features {
+            padding: 10px 20px;
+        }
+
+        .additional-features p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            animation: pulse 1s infinite;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Additional Features */
+        .terms-and-privacy {
+            font-size: 12px;
+            color: #007BFF;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-checkbox input {
+            margin-right: 8px;
+            position: relative;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .custom-checkbox input:checked::after {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            color: #007BFF;
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-checkbox input:hover {
+            background-color: #f2f2f2;
+        }
+
+        .custom-checkbox label {
+            font-size: 14px;
+            color: #fff;
+            text-align: left;
+            transition: color 0.3s;
+        }
+
+        .custom-checkbox label:hover {
+            color: #FFA500;
+        }
+
+        .forgot-password, .sign-up, .terms-and-privacy {
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover, .sign-up:hover, .terms-and-privacy:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="dark-mode-toggle">
+            <label for="dark-mode-switch">Dark Mode</label>
+            <input type="checkbox" id="dark-mode-switch">
+        </div>
+        <div class="welcome-message">
+            <h1>Welcome to <span style="color: #FFA500;">Juma EdTech</span></h1>
+            <p>Your resource for quality education</p>
+        </div>
+        <h2>Login to Access Your Account</h2>
+        <form id="login-form" onsubmit="return redirectLogin()">
+            <div class="input-container">
+                <label for="username" style="font-weight: bold; color: #fff;">Username or Email</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-container">
+                <label for="password" style="font-weight: bold; color: #fff;">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="agree-terms" name="agree-terms">
+                <label for="agree-terms">I agree to the <a href="https://juma883.wordpress.com/terms-of-service/" class="terms-and-privacy">Terms of Service</a> and <a href="https://juma883.wordpress.com/privacy-policy/" class="terms-and-privacy">Privacy Policy</a>.</label>
+            </div>
+            <button type="submit" class="animate__animated animate__pulse">Login</button>
+        </form>
+        <p class="quote-of-the-day">
+            <h3>Quote of the Day</h3>
+            <p id="quote-text">Loading...</p>
+        </p>
+        <div class="additional-features">
+            <p><a class="forgot-password" href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a class="sign-up" href="signup.html">Sign Up</a></p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/bramuelcosmas" class="instagram"><i class="fab fa-instagram" style="color: #E1306C;"></i></a>
+                <a href="https://wa.me/254705676371" class="whatsapp"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+                <a href="https://www.facebook.com/ykjmsbram" class="facebook"><i class="fab fa-facebook-f" style="color: #1877f2;"></i></a>
+                <a href="https://twitter.com/bramueljuma12" class="twitter"><i class="fab fa-twitter" style="color: #1DA1F2;"></i></a>
+                <a href="https://www.linkedin.com/in/bramueljuma" class="linkedin"><i class="fab fa-linkedin-in" style="color: #2867B2;"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const darkModeSwitch = document.getElementById("dark-mode-switch");
+        const body = document.body;
+
+        if (localStorage.getItem("darkMode") === "enabled" || (prefersDarkMode && !localStorage.getItem("darkMode"))) {
+            body.classList.add("dark-mode");
+            darkModeSwitch.checked = true;
+        }
+
+        darkModeSwitch.addEventListener("change", () => {
+            if (darkModeSwitch.checked) {
+                body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Learning never exhausts the mind. - Leonardo da Vinci",
+            "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela",
+        ];
+
+        function displayRandomQuote() {
+            const quoteText = document.getElementById("quote-text");
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteText.textContent = randomQuote;
+        }
+
+        displayRandomQuote();
+
+        function redirectLogin() {
+            // Replace with your login validation logic
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "yourUsername" && password === "yourPassword") {
+                window.location.href = "https://bramuelj.github.io/high-school/";
+            } else {
+                // You can display an error message or handle the login failure here
+                alert("Login failed. Please check your credentials.");
+            }
+
+            return false; // Prevent the form from submitting
+        }
+    </script>
+</body>
+</html>
